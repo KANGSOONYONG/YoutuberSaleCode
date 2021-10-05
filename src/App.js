@@ -5,8 +5,7 @@ import Youtuber from './component/Youtuber';
 function App() {
   return (
     <div className="App">
-      <Header />
-        <p>리스트</p>
+        <Header />
         <Youtuber />
     </div>
   );

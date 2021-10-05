@@ -6,4 +6,6 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
-20211005 : styled-components 설치 
+20211005 : 
+1. styled-components 설치 
+2. styled-components 부분 적용, 만들고 싶은 부분 하드코딩
