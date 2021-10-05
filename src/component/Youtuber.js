@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 export default function Youtuber(){
 
@@ -25,7 +26,9 @@ export default function Youtuber(){
 
     return (
         <>
-            <Li>{유튜버1[0]} {유튜버1[1]} {유튜버1[2]}</Li>
+            <Link to="/detail">
+                <Li>{유튜버1[0]} {유튜버1[1]} {유튜버1[2]}</Li>
+            </Link>
             <Li>{유튜버2[0]} {유튜버2[1]} {유튜버2[2]}</Li>
         </>
     )
