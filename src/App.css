@@ -1,14 +1,2 @@
-h1 {
-  text-align: center;
-}
 
-.list {
-  list-style-type: none;
-  padding: 0;
-  border: 1px solid black;
-}
 
-.list li {
-  float: left;
-  padding: 0 10px;
-}
