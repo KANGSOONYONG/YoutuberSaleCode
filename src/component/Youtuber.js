@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Youtuber(){
 
-    const Li = styled.button`
+    const Button = styled.button`
     float: left;
 
     padding: 10px 20px;
@@ -27,9 +27,9 @@ export default function Youtuber(){
     return (
         <>
             <Link to="/detail">
-                <Li>{유튜버1[0]} {유튜버1[1]} {유튜버1[2]}</Li>
+                <Button>{유튜버1[0]} {유튜버1[1]} {유튜버1[2]}</Button>
             </Link>
-            <Li>{유튜버2[0]} {유튜버2[1]} {유튜버2[2]}</Li>
+            <Button>{유튜버2[0]} {유튜버2[1]} {유튜버2[2]}</Button>
         </>
     )
 }
