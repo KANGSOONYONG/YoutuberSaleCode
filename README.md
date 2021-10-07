@@ -23,3 +23,12 @@ styled-components 부분 적용, 만들고 싶은 부분 하드코딩
 - react-router-dom의 Link를 이용하였는데, styled-components 때문에 Header.js에서 text-decoration : none이 안됨 
 
 => 따라서 inline방식으로 style 지정했는데 해결방안이 없을까?
+
+20211007 :
+1. 더미데이터, data.json 생성
+
+2. map()이용해서 중복 줄여주기 
+(없는 항목은 어떻게 구분해서 표시를 하지? 현재 "없음"으로 표시하는 중)
+
+3. item에서 map 쓰면 youtuber 4명의 코드가 다 나오는데 어떻게 해결? 
+filter를 사용해서 특정 유튜버의 코드만 나타냈지만 다른 페이지도 동일한 결과 나옴

@@ -1,8 +1,10 @@
-import styled from "styled-components"
-import { Link } from "react-router-dom"
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import dummy from "../db/data.json";
 
 export default function Youtuber(){
 
+    // style 관리
     const Button = styled.button`
     float: left;
 
@@ -20,16 +22,16 @@ export default function Youtuber(){
 
     cursor: pointer;
     `
-    
-    const 유튜버1 = ["유튜버1", "더프로틴웍스", "미트리"];
-    const 유튜버2 = ["유튜버2", "마이프로틴", "랭킹닷컴"];
+    // state 관리
+
 
     return (
         <>
             <Link to="/detail">
-                <Button>{유튜버1[0]} {유튜버1[1]} {유튜버1[2]}</Button>
+                    {dummy.youtubers.map( youtuber =>(
+                         <Button key={youtuber.id}>{youtuber.youtuber}</Button>
+                    ))}
             </Link>
-            <Button>{유튜버2[0]} {유튜버2[1]} {유튜버2[2]}</Button>
         </>
     )
 }

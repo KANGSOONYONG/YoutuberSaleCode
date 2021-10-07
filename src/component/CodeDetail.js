@@ -1,9 +1,21 @@
+import dummy from "../db/data.json";
+
 export default function CodeDetail() {
+    
+    const itemFilter = dummy.items.filter(item =>(
+        item.youtuber === "지피티"
+    ));
+
     return (
         <>
-            <p>유튜버 1</p>
-            <p>마이프로틴 코드: 1234</p>
-            <p>랭킹닷컴 코드: 1234</p>
+            {itemFilter.map(item => (
+                <div key={item.id}>
+                    <p>{item.metree}</p>
+                    <p>{item.ranking}</p>
+                    <p>{item.myprotein}</p>
+                    <p>{item.proteinworks}</p>
+                </div>
+            ))}
         </>
     )
 }

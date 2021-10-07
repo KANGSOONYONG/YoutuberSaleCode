@@ -1,24 +1,24 @@
 {
-    "youtuber": [
+    "youtubers": [
       {
-        "youtuberId": 1,
+        "id": 1,
         "youtuber": "일반인클라쓰_RONIE"
       },
       {
-        "youtuberId": 2,
+        "id": 2,
         "youtuber": "지기TV"
       },
       {
-        "youtuberId": 3,
+        "id": 3,
         "youtuber": "지피티"
       },
       {
-        "youtuberId": 4,
+        "id": 4,
         "youtuber": "키다리형"
       }
 
     ],
-    "siteName": [
+    "siteNames": [
       {
         "name" : "미트리",
         "SiteId" : 1
@@ -38,7 +38,7 @@
     ],
     "items": [
       {
-        "youtuberId": 1,
+        "id": 1,
         "youtuber": "일반인클라쓰_RONIE",
         "metree" : "추천인 ",
         "ranking" : "없음",
@@ -46,7 +46,7 @@
         "proteinworks" : "없음"
       },
       {
-        "youtuberId": 2,
+        "id": 2,
         "youtuber": "지기TV",
         "metree" :  "없음",
         "ranking" : "1232222",
@@ -54,7 +54,7 @@
         "proteinworks" : "1234222"
       },
       {
-        "youtuberId": 3,
+        "id": 3,
         "youtuber": "지피티",
         "metree" :  "없음",
         "ranking" : "1232222",
@@ -62,7 +62,7 @@
         "proteinworks" : "1234222"
       },
       {
-        "youtuberId": 4,
+        "id": 4,
         "youtuber": "키다리형",
         "metree" :  "없음",
         "ranking" : "1232222",
