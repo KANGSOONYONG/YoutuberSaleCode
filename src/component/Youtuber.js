@@ -27,11 +27,11 @@ export default function Youtuber(){
 
     return (
         <>
-            <Link to="/detail">
-                    {dummy.youtubers.map( youtuber =>(
-                         <Button key={youtuber.id}>{youtuber.youtuber}</Button>
-                    ))}
-            </Link>
+            {dummy.youtubers.map( youtuber =>(
+                    <Button>
+                        <Link to={`/youtuber/${youtuber.youtuber}`} key={youtuber.id}>{youtuber.youtuber}</Link>
+                    </Button>
+            ))}
         </>
     )
 }

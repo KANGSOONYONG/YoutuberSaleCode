@@ -1,8 +1,9 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-
 import Header from './component/Header';
 import Youtuber from './component/Youtuber';
 import CodeDetail from './component/CodeDetail';
+
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import EmptyPage from './component/EmptyPage';
 
 function App() {
   return (
@@ -13,8 +14,11 @@ function App() {
             <Route exact path="/">
               <Youtuber />
             </Route>
-            <Route path="/detail">
+            <Route path="/youtuber/:youtuber">
               <CodeDetail />
+            </Route>
+            <Route>
+              <EmptyPage />
             </Route>
           </Switch>
       </div>
