@@ -40,34 +40,34 @@
       {
         "id": 1,
         "youtuber": "일반인클라쓰_RONIE",
-        "metree" : "추천인 ",
-        "ranking" : "없음",
-        "myprotein" : "1234",
-        "proteinworks" : "없음"
+        "metree" : "100417958",
+        "ranking" : null,
+        "myprotein" : "주문시 추천인 코드 [RONIE-RF] 입력해주세요! 로니 고유 할인 코드 [RONIE] 를 입력하시면 추가 36% 할인을 받으실 수 있습니다",
+        "proteinworks" : null
       },
       {
         "id": 2,
         "youtuber": "지기TV",
-        "metree" :  "없음",
-        "ranking" : "1232222",
-        "myprotein" : "없음",
-        "proteinworks" : "1234222"
+        "metree" :  null,
+        "ranking" : "회원가입시 (코드 jgtv 입력)",
+        "myprotein" : null,
+        "proteinworks" : "추가 30% 할인코드 JGTV"
       },
       {
         "id": 3,
         "youtuber": "지피티",
-        "metree" :  "없음",
-        "ranking" : "1232222",
-        "myprotein" : "없음",
-        "proteinworks" : "1234222"
+        "metree" :  "지피티 회원가입시 추천인 코드 : 100371050 (56%할인)",
+        "ranking" : null,
+        "myprotein" : null,
+        "proteinworks" : "할인코드 : GPT"
       },
       {
         "id": 4,
         "youtuber": "키다리형",
-        "metree" :  "없음",
-        "ranking" : "1232222",
-        "myprotein" : "없음",
-        "proteinworks" : "1234222"
+        "metree" :  "회원가입시 최대72%할인 추천인코드 : 100052273",
+        "ranking" : null,
+        "myprotein" : "추가할인 코드: tallguy 회원가입시 추천인코드 8BRF-R1 ",
+        "proteinworks" : null
       }
     ]
   }

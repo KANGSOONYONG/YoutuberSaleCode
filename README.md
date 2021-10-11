@@ -6,11 +6,24 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211011 :
+1. data.json에 가짜 할인 코드 지우고 실제 할인 코드 입력
+
+2. 조건문을 이용해서 할인 코드가 없는 상품은 표시하지 않기
+
+3. Link 태그를 사용하지 않고, as={Link} to="/" 로 코드 작성,
+   이후에 text-decoration: none을 이용해서 인라인으로 적용해줬던 스타일을 없앨 수 있었음
+
+4. grid 설정하려 했으나 (Header부분이 인식이 안됨) Youtuber.js의 Button들만 grid-template-columns가 됨
+
 20211008 :
 
 1. 특정 유튜버의 이름을 url 정보로 받아서(useParams) 보여주고 싶은 데이터만 보여주기
 
 2. EmptyPage 컴포넌트와 라우터를 이용하여 잘못된 접근시 메인페이지로 이동하게 함
+
+
+
 
 20211007 :
 1. 더미데이터, data.json 생성
@@ -35,4 +48,4 @@ styled-components 부분 적용, 만들고 싶은 부분 하드코딩
 - react-router-dom의 Link를 이용하였는데, styled-components 때문에 Header.js에서 text-decoration : none이 안됨 
 
 => 따라서 inline방식으로 style 지정했는데 해결방안이 없을까?
-
+해결 방안: Link 태그를 사용하지 않고, as={Link} to="/" 로 코드 작성, 이후에 text-decoration: none을 이용해서 인라인으로 적용해줬던 스타일을 없앨 수 있었음
