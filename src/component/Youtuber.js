@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import dummy from "../db/data.json";
-
-export default function Youtuber(){
+import useFetch from "../hooks/useFetch";
 
     // style 관리
     const Layout = styled.section`
@@ -28,11 +26,19 @@ export default function Youtuber(){
     font-weight: bold;
 
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     `
+
+export default function Youtuber(){
+
+    const youtuber = useFetch(`http://localhost:3001/items`)
 
     return (
         <Layout>
-            {dummy.youtubers.map( youtuber =>(
+            {youtuber.map( youtuber =>(
                     <Button as={Link} to={`/youtuber/${youtuber.youtuber}`} key={youtuber.id}>
                         {youtuber.youtuber}
                     </Button>

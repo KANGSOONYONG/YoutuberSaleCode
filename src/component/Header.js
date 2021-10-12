@@ -1,15 +1,12 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-export default function Header() {
-
     // style 관리
-
-    const Header = styled.header`
+    const Header1 = styled.header`
 
     // 그리드 설정
     display: grid;
-    grid-template-columns: 1.5fr 200px auto;
+    grid-template-columns: 1.5fr auto;
 
     // leftNav 설정
     width: 100%;
@@ -19,10 +16,9 @@ export default function Header() {
     top: 0;
     left: 0;
 
-    background-color: #A9D0F5;
+    border-bottom: 3px solid dodgerblue;
     `
     const Namelogo = styled.a`
-
     // 위치 설정
     margin: 10px 5px 10px 5px;
 
@@ -36,27 +32,9 @@ export default function Header() {
     font-weight: bold;
     color: black
     `
-    const LoginButton = styled.button`
-
-    margin: 20px 50px;
-
-    // a 밑줄 없애기
-    text-decoration: none;
-
-    // 마우스 올리면 마우스 포인트 나옴
-    cursor: pointer;
-
-    color: black;
-
-    border: 0 none;
-    border-radius: 30px;
-
-    font-size: 15px;
-    `
-    const SideNav = styled.div`
+    const TopNav = styled.div`
     float: left;
     `
-
     const AddList = styled.li`
     float: left;
 
@@ -67,15 +45,19 @@ export default function Header() {
     list-style-type: none;
     font-size: 15px;
     `
+
+export default function Header() {
+
+
     return (
-        <Header>
+        <Header1>
             <Namelogo as={Link} to="/">할인코드<br/>보고가</Namelogo>
-            <LoginButton>로그인</LoginButton>
-            <SideNav>
+            <TopNav>
+                <AddList>로그인</AddList>
                 <AddList>목록 추가</AddList>
                 <AddList>목록 삭제</AddList>
-            </SideNav>
-        </Header>
+            </TopNav>
+        </Header1>
 
     )
 }

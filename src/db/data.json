@@ -21,19 +21,23 @@
     "siteNames": [
       {
         "name" : "미트리",
-        "SiteId" : 1
+        "SiteId" : 1,
+        "Link": "https://metree.co.kr/index/index.php?sponsor=&refere="
       },
       {
-        "name" : "랭킹닷컴",
-        "SiteId" : 1
+        "name" : "랭킹닭컴",
+        "SiteId" : 2,
+        "Link": "https://rankingdak.com/shop/promotion.php?gclid=Cj0KCQjw5JSLBhCxARIsAHgO2SezT_K7mHKThKyXXUNOiS61iQGcftjvO6FlYYeI11ZKSuqcYYD2ugAaAmWIEALw_wcB#list_sel0"
       },
       {
         "name" : "마이 프로틴",
-        "SiteId" : 1
+        "SiteId" : 3,
+        "Link": "https://www.myprotein.co.kr/?affil=mpppc&thg_ppc_campaign=71700000022910227&product_id&gclid=Cj0KCQjw5JSLBhCxARIsAHgO2SdelD41_JLxGKE3W8cfKGap_8rjdMMcTt7VzdwAdcRjUCgUYsFRG0waAqAbEALw_wcB&gclsrc=aw.ds"
       },
       {
         "name" : "더 프로틴 웍스",
-        "SiteId" : 1
+        "SiteId" : 4,
+        "Link": "https://kr.theproteinworks.com/"
       }
     ],
     "items": [

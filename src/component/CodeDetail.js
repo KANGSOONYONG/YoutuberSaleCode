@@ -1,6 +1,16 @@
-import dummy from "../db/data.json";
 import { useParams } from "react-router";
 import styled from "styled-components";
+import useFetch from "../hooks/useFetch";
+
+const Header1 = styled.h1`
+margin-left: 10px;
+border-bottom : 1px solid gray;
+display: inline-block;
+`
+
+const Contents = styled.p`
+padding: 5px 10px;
+`
 
 export default function CodeDetail() {
 
@@ -30,30 +40,18 @@ export default function CodeDetail() {
     //     transform: rotate(0deg);
     //   }
     
-    const Header = styled.h1`
-    margin-left: 10px;
-    border-bottom : 1px solid gray;
-    display: inline-block;
-    `
-    
-    const Contents = styled.p`
-    padding: 5px 10px;
-    `
 
     const youParams = useParams().youtuber;
+    const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
 
-    const itemFilter = dummy.items.filter(item =>(
-        item.youtuber === youParams
-    ));
-    
     return (
         <>
-            <Header>{youParams}</Header>
+            <Header1>{youParams}</Header1>
 
-            {itemFilter.map(item => (
+            {item.map(item => (
                 <div key={item.id}>
                     {item.metree !== null && <Contents>미트리 할인 코드 : {item.metree}</Contents>}
-                    {item.ranking !== null && <Contents>랭킹닷컴 할인 코드 : {item.ranking}</Contents>}
+                    {item.ranking !== null && <Contents>랭킹닭컴 할인 코드 : {item.ranking}</Contents>}
                     {item.myprotein !== null && <Contents>마이프로틴 할인 코드 : {item.myprotein}</Contents>}
                     {item.proteinworks !== null && <Contents>더프로틴웍스 할인 코드 : {item.proteinworks}</Contents>}
                 </div>
