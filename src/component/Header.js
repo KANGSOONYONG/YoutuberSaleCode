@@ -9,24 +9,22 @@ export default function Header() {
 
     // 그리드 설정
     display: grid;
-    grid-template-rows: 80px 40px auto;
+    grid-template-columns: 1.5fr 200px auto;
 
     // leftNav 설정
-    width: 120px;
-    height: 100%;
-    position: fixed;
-    // z-index: 1;
+    width: 100%;
+    height: 70px;
+    // position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
 
-    overflow-x: hidden;
-
     background-color: #A9D0F5;
     `
-    const Namelogo = styled.div`
+    const Namelogo = styled.a`
 
     // 위치 설정
-    margin: 10px 5px 0px 5px;
+    margin: 10px 5px 10px 5px;
 
     // a 밑줄 없애기
     text-decoration: none;
@@ -40,7 +38,7 @@ export default function Header() {
     `
     const LoginButton = styled.button`
 
-    margin: 0px 10px;
+    margin: 20px 50px;
 
     // a 밑줄 없애기
     text-decoration: none;
@@ -48,29 +46,26 @@ export default function Header() {
     // 마우스 올리면 마우스 포인트 나옴
     cursor: pointer;
 
-    background-color: dodgerblue;
-    color: #fff;
+    color: black;
 
     border: 0 none;
     border-radius: 30px;
 
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 15px;
     `
     const SideNav = styled.div`
     float: left;
     `
 
     const AddList = styled.li`
-    font-size: 10px;
+    float: left;
 
     cursor: pointer;
 
-    margin: 20px 10px 0px; 10px;;
+    margin: 25px 10px 25px; 10px;;
 
     list-style-type: none;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 15px;
     `
     return (
         <Header>

@@ -6,6 +6,13 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211012 :
+1. footer 제작
+
+2. Header.js, Youtuer.js, Footer.js에 grid 적용함
+
+
+
 20211011 :
 1. data.json에 가짜 할인 코드 지우고 실제 할인 코드 입력
 
@@ -15,6 +22,7 @@
    이후에 text-decoration: none을 이용해서 인라인으로 적용해줬던 스타일을 없앨 수 있었음
 
 4. grid 설정하려 했으나 (Header부분이 인식이 안됨) Youtuber.js의 Button들만 grid-template-columns가 됨
+-> App.js에서 grid설정하지 않고, Header 부분의 position : fixed를 없앰
 
 20211008 :
 

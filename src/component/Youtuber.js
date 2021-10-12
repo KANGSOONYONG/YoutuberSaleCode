@@ -5,10 +5,15 @@ import dummy from "../db/data.json";
 export default function Youtuber(){
 
     // style 관리
+    const Layout = styled.section`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    `
     const Button = styled.button`
     float: left;
 
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin: 10px;
 
     text-decoration: none;
@@ -26,12 +31,12 @@ export default function Youtuber(){
     `
 
     return (
-        <>
+        <Layout>
             {dummy.youtubers.map( youtuber =>(
                     <Button as={Link} to={`/youtuber/${youtuber.youtuber}`} key={youtuber.id}>
                         {youtuber.youtuber}
                     </Button>
             ))}
-        </>
+        </Layout>
     )
 }
