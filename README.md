@@ -6,6 +6,11 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211013 : DELETE Method (fetch)
+1. DELETE 메소드 사용하려 했으나 오류 발생함 어떻게 해결할지 좀 더 고민해봐야할 듯 함
+
+DELETE http://localhost:3001/items?youtuber=%EC%A7%80%EA%B8%B0TV 404 (Not Found)
+
 
 20211012 : GET Method (useState, useEffect => useFetch)
 1. footer 제작 (2nd commit : map으로 중복 없애줌)
