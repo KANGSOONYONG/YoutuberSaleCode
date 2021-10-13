@@ -41,19 +41,27 @@ export default function CodeDetail() {
     //   }
     
 
+
     const youParams = useParams().youtuber;
     const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
 
+    function del() {
+        if(window.confirm("삭제 하시겠습니까?")) {
+            fetch(`http://localhost:3001/items?youtuber=${youParams}`, {
+                method : 'DELETE'
+            })
+        }
+    }
     return (
         <>
             <Header1>{youParams}</Header1>
 
             {item.map(item => (
                 <div key={item.id}>
-                    {item.metree !== null && <Contents>미트리 할인 코드 : {item.metree}</Contents>}
-                    {item.ranking !== null && <Contents>랭킹닭컴 할인 코드 : {item.ranking}</Contents>}
-                    {item.myprotein !== null && <Contents>마이프로틴 할인 코드 : {item.myprotein}</Contents>}
-                    {item.proteinworks !== null && <Contents>더프로틴웍스 할인 코드 : {item.proteinworks}</Contents>}
+                    {item.metree !== null && <Contents>미트리 할인 코드 : {item.metree}<button onClick={del}>삭제</button></Contents>}
+                    {item.ranking !== null && <Contents>랭킹닭컴 할인 코드 : {item.ranking}<button onClick={del}>삭제</button></Contents>}
+                    {item.myprotein !== null && <Contents>마이프로틴 할인 코드 : {item.myprotein}<button onClick={del}>삭제</button></Contents>}
+                    {item.proteinworks !== null && <Contents>더프로틴웍스 할인 코드 : {item.proteinworks}<button onClick={del}>삭제</button></Contents>}
                 </div>
             ))}
         </>

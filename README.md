@@ -12,7 +12,7 @@
 
 2. Header.js, Youtuer.js, Footer.js에 grid 적용함
 
-3. 2nd commit : 더미데이터는 고정된 채로 변경되지 않기 때문에 사용자 액션에 따라 데이터를 읽고,쓰고, 삭제하는 방법 적용함 (GET메소드) (db구축하고 API를 만들어야 함-> json server, restful API)
+3. 2nd commit : 더미데이터는 고정된 채로 변경되지 않기 때문에 사용자 액션에 따라 데이터를 읽고,쓰고, 삭제하는 방법 적용함 (GET메소드) (db구축하고 API를 만들어야 함-> json server를 이용하여 restful API 만들 수 있음)
 
 4. 2nd commit : styled-components 오류 해결 (함수 밖에서 선언해주기)
    useEffect 안에 state를 넣어서 오류 해결해줬음 (state는 item말고 useParams 넣어줌) -> 커스텀 훅인 useFetch 만들어서 중복 없앰

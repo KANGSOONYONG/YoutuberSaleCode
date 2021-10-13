@@ -30,6 +30,8 @@ import useFetch from "../hooks/useFetch";
     display: flex;
     align-items: center;
     justify-content: center;
+
+    // width: 200px;
     `
 
 export default function Youtuber(){
