@@ -6,6 +6,14 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211014 : DELETE Method (fetch) 사용을 간편하게 하기 위해 db 수정
+1. DELETE Method (fetch) 사용을 간편하게 하기 위해 db 수정
+
+2. db수정으로 인해 Youtuber, CodeDetail.js를 수정하였음
+
+3. 체크박스를 만들어서, 체크박스 선택한 것만 삭제하게 만드는 기능을 넣으려고 했음 (CodeDetail.js)
+하지만 체크박스를 체크하면 오류 발생해서 해결해야할듯 (TypeError: checked is not iterable)
+
 20211013 : DELETE Method (fetch)
 1. DELETE 메소드 사용하려 했으나 오류 발생함 어떻게 해결할지 좀 더 고민해봐야할 듯 함
 

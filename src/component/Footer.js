@@ -8,7 +8,7 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 width: 100%;
 height: 100px;
 float: left;
-position: absolute;
+position: fixed;
 left: 0;
 bottom: 0;
 border-top: 1px solid black;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
@@ -8,8 +9,10 @@ border-bottom : 1px solid gray;
 display: inline-block;
 `
 
-const Contents = styled.p`
-padding: 5px 10px;
+const Contents = styled.div`
+display: inline-block;
+padding : 0 0 10px 0;
+margin: 0px 0px 30px 10px;
 `
 
 export default function CodeDetail() {
@@ -39,29 +42,44 @@ export default function CodeDetail() {
     // .nav_name a span:hover::after {
     //     transform: rotate(0deg);
     //   }
-    
-
 
     const youParams = useParams().youtuber;
     const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
 
+    
+    const [checked, setChecked] = useState([]);
+ 
+    const handleChange = (checked, id) => {
+        if (checked) {
+            setChecked([...checked, id]);
+        } else {
+            setChecked(checked.filter((el) => el !== id));
+            }
+        };
+    
     function del() {
         if(window.confirm("삭제 하시겠습니까?")) {
-            fetch(`http://localhost:3001/items?youtuber=${youParams}`, {
+            fetch(`http://localhost:3001/items/${item[0].id}`, {
                 method : 'DELETE'
             })
         }
     }
+
     return (
         <>
-            <Header1>{youParams}</Header1>
+            <Header1>{youParams} <button onClick={del}>삭제</button></Header1>
 
             {item.map(item => (
                 <div key={item.id}>
-                    {item.metree !== null && <Contents>미트리 할인 코드 : {item.metree}<button onClick={del}>삭제</button></Contents>}
-                    {item.ranking !== null && <Contents>랭킹닭컴 할인 코드 : {item.ranking}<button onClick={del}>삭제</button></Contents>}
-                    {item.myprotein !== null && <Contents>마이프로틴 할인 코드 : {item.myprotein}<button onClick={del}>삭제</button></Contents>}
-                    {item.proteinworks !== null && <Contents>더프로틴웍스 할인 코드 : {item.proteinworks}<button onClick={del}>삭제</button></Contents>}
+                    {item.code !== null && 
+                    <Contents> {item.siteName} 할인 코드{item.percent !== null && <span>(할인률:{item.percent}%)</span>} : {item.code} 
+                    <button> 수정 </button> 
+                    <input  type="checkbox" onChange={(e)=>{
+                        handleChange(e.currentTarget.checked, item.id)
+                    }}
+                    checked={checked.includes(item.id) ? true : false}/> 
+                    </Contents>}
+                    
                 </div>
             ))}
         </>

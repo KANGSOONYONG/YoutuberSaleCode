@@ -36,7 +36,7 @@ import useFetch from "../hooks/useFetch";
 
 export default function Youtuber(){
 
-    const youtuber = useFetch(`http://localhost:3001/items`)
+    const youtuber = useFetch(`http://localhost:3001/youtubers`)
 
     return (
         <Layout>
