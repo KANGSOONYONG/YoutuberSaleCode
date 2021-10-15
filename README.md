@@ -6,6 +6,8 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211016 : PUT Method 구상
+1. PUT Method 구현하기 위해 구상 (CodeDetail.js) -> 직접 입력받은 값으로 수정하고 싶음
 
 20211015 : 
 1. styled-components 이용하여 전역 스타일링 시도함 (/style/GlobalStyle.js)

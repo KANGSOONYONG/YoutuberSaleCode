@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
@@ -20,6 +19,27 @@ export default function CodeDetail() {
     const youParams = useParams().youtuber;
     const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
     
+    // // 수정 기능 (PUT)
+    // function put() {
+    //     fetch(`http://localhost:3001/items/${item[index].id}` , {
+    //         method : "PUT",
+    //         headers : {
+    //             'Content-Type' : 'application/json'
+    //         },
+    //         body : JSON.stringify({
+    //             code : "직접 입력 받은 데이터"
+    //         })
+    //     })
+    //     .then(res => {
+    //         if(res.ok){
+    //             console.log("setCode(직접 입력 받은 데이터)");
+    //         }
+    //     })
+    // }
+
+
+
+    // 삭제 기능 (DELETE)
     function del(index) {
         if(window.confirm("삭제 하시겠습니까?")) {
             fetch(`http://localhost:3001/items/${item[index].id}`, {
