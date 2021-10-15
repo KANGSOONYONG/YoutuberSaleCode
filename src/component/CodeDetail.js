@@ -17,6 +17,38 @@ margin: 0px 0px 30px 10px;
 
 export default function CodeDetail() {
 
+    const youParams = useParams().youtuber;
+    const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
+    
+    function del(index) {
+        if(window.confirm("삭제 하시겠습니까?")) {
+            fetch(`http://localhost:3001/items/${item[index].id}`, {
+                method : 'DELETE'
+            }).then(res =>{
+                if(res.ok) {
+                    console.log("삭제 완료");
+                    window.location.reload()
+                }
+            })
+        }
+    }
+
+    return (
+        <>
+            <Header1>{youParams}</Header1>
+            {item.map((item, index) => (
+                <div key={item.id}>
+                    {item.code !== null && 
+                    <Contents> {item.siteName} 할인 코드{item.percent !== null && <span>(할인률:{item.percent}%)</span>} : {item.code} 
+                    <button> 수정 </button>
+                    <button  onClick={(e) => del(index, e)}>삭제</button>
+                    </Contents>}
+                </div>
+            ))}
+        </>
+    )
+}
+
     // .nav_name a span {
     //     text-transform: uppercase;
     //     transition-property: all;
@@ -42,46 +74,3 @@ export default function CodeDetail() {
     // .nav_name a span:hover::after {
     //     transform: rotate(0deg);
     //   }
-
-    const youParams = useParams().youtuber;
-    const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
-
-    
-    const [checked, setChecked] = useState([]);
- 
-    const handleChange = (checked, id) => {
-        if (checked) {
-            setChecked([...checked, id]);
-        } else {
-            setChecked(checked.filter((el) => el !== id));
-            }
-        };
-    
-    function del() {
-        if(window.confirm("삭제 하시겠습니까?")) {
-            fetch(`http://localhost:3001/items/${item[0].id}`, {
-                method : 'DELETE'
-            })
-        }
-    }
-
-    return (
-        <>
-            <Header1>{youParams} <button onClick={del}>삭제</button></Header1>
-
-            {item.map(item => (
-                <div key={item.id}>
-                    {item.code !== null && 
-                    <Contents> {item.siteName} 할인 코드{item.percent !== null && <span>(할인률:{item.percent}%)</span>} : {item.code} 
-                    <button> 수정 </button> 
-                    <input  type="checkbox" onChange={(e)=>{
-                        handleChange(e.currentTarget.checked, item.id)
-                    }}
-                    checked={checked.includes(item.id) ? true : false}/> 
-                    </Contents>}
-                    
-                </div>
-            ))}
-        </>
-    )
-}

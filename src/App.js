@@ -1,6 +1,7 @@
 import Header from './component/Header';
 import Youtuber from './component/Youtuber';
 import CodeDetail from './component/CodeDetail';
+import GlobalStyle from './style/GlobalStyle'
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import EmptyPage from './component/EmptyPage';
@@ -10,6 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+          <GlobalStyle />
           <Header />
           <Switch>
             <Route exact path="/">
