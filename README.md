@@ -6,6 +6,11 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211018 : PUT Method (2)
+1. data.json의 code 항목을 수정하기 위해 값을 넣은 뒤 버튼을 누르는 기능 구현함
+하지만 result값이 왜 undefined가 되는지 모르겠음 -> result가 아니라 value를 넣어야했음
+
+
 20211016 : PUT Method 구상
 1. PUT Method 구현하기 위해 구상 (CodeDetail.js) -> 직접 입력받은 값으로 수정하고 싶음
 

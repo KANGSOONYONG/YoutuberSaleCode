@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
+import { useState } from "react";
 
 const Header1 = styled.h1`
 margin-left: 10px;
@@ -16,26 +17,45 @@ margin: 0px 0px 30px 10px;
 
 export default function CodeDetail() {
 
+    const [value, setValue] = useState();
+    const [result, setResult] = useState();
+
+
+    const valueChange = (e) => {
+        setValue(e.target.value)
+    }
+    
+    const gugudanLogic = (e) => {
+        e.preventDefault();
+        setResult(value);
+    }
+    
+    let inputFocus;
+    const onRefInput = (e)=> {inputFocus = e}
+
+
     const youParams = useParams().youtuber;
     const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
     
-    // // 수정 기능 (PUT)
-    // function put() {
-    //     fetch(`http://localhost:3001/items/${item[index].id}` , {
-    //         method : "PUT",
-    //         headers : {
-    //             'Content-Type' : 'application/json'
-    //         },
-    //         body : JSON.stringify({
-    //             code : "직접 입력 받은 데이터"
-    //         })
-    //     })
-    //     .then(res => {
-    //         if(res.ok){
-    //             console.log("setCode(직접 입력 받은 데이터)");
-    //         }
-    //     })
-    // }
+    // 수정 기능 (PUT)
+    function put(index) {
+        fetch(`http://localhost:3001/items/${item[index].id}` , {
+            method : "PUT",
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({
+                ...item[index],
+                code : value
+            })
+        })
+        .then(res => {
+            if(res.ok){
+                console.log(value);
+                // window.location.reload()
+            }
+        })
+    }
 
 
 
@@ -56,12 +76,19 @@ export default function CodeDetail() {
     return (
         <>
             <Header1>{youParams}</Header1>
+
+
+
             {item.map((item, index) => (
                 <div key={item.id}>
                     {item.code !== null && 
                     <Contents> {item.siteName} 할인 코드{item.percent !== null && <span>(할인률:{item.percent}%)</span>} : {item.code} 
                     <button> 수정 </button>
                     <button  onClick={(e) => del(index, e)}>삭제</button>
+                    <form onSubmit={gugudanLogic}>
+                        <input ref={onRefInput} type="text" value={value} onChange={valueChange}/>
+                        <button onClick={(e) => put(index, e)}>코드 수정</button>
+                    </form>
                     </Contents>}
                 </div>
             ))}
