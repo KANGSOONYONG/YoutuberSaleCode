@@ -21,13 +21,17 @@ export default function CodeDetail() {
 
 
     const valueChange = (e) => {
-        setValue(e.target.value)
+        setValue(e.target.value);
     }
     
-
+    const handleSubmit = (e) => {
+        // setValue(value);
+        console.log(`${setValue(value)}`);
+        e.preventDefault();
+    }
     
-    let inputFocus;
-    const onRefInput = (e)=> {inputFocus = e}
+    // let inputFocus;
+    // const onRefInput = (e)=> {inputFocus = e}
 
 
     const youParams = useParams().youtuber;
@@ -79,8 +83,8 @@ export default function CodeDetail() {
                     <Contents> {item.siteName} 할인 코드{item.percent !== null && <span>(할인률:{item.percent}%)</span>} : {item.code} 
                     <button> 수정 </button>
                     <button  onClick={(e) => del(index, e)}>삭제</button>
-                    <form>
-                        <input ref={onRefInput} type="text" value={value} onChange={valueChange}/>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" value={value} onChange={valueChange}/>
                         <button onClick={(e) => put(index, e)}>코드 수정</button>
                     </form>
                     </Contents>}
