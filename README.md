@@ -6,6 +6,11 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
+20211020 : Post Method 구상
+1. Post 메소드를 구현할 Create.js 컴포넌트 생성
+
+2. 기존 PUT Method 구현 방식을 참고해보려고 함
+
 20211018 : PUT Method (2)
 1. data.json의 code 항목을 수정하기 위해 값을 넣은 뒤 버튼을 누르는 기능 구현함
 하지만 result값이 왜 undefined가 되는지 모르겠음 -> result가 아니라 value를 넣어야했음

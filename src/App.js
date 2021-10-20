@@ -6,6 +6,7 @@ import GlobalStyle from './style/GlobalStyle'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import EmptyPage from './component/EmptyPage';
 import Footer from './component/Footer';
+import CreateYoutuber from './component/CreateYoutuber';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/youtuber/:youtuber">
               <CodeDetail />
+            </Route>
+            <Route path="/create">
+              <CreateYoutuber />
             </Route>
             <Route>
               <EmptyPage />
