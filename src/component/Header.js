@@ -54,7 +54,7 @@ export default function Header() {
             <Namelogo as={Link} to="/">할인코드<br/>보고가</Namelogo>
             <TopNav>
                 <AddList>로그인</AddList>
-                <AddList as={Link} to="/create">유튜버 추가</AddList>
+                <AddList as={Link} to="/createYoutuber">유튜버 추가</AddList>
                 <AddList>삭제</AddList>
             </TopNav>
         </Header1>

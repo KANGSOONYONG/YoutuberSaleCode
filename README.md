@@ -6,12 +6,20 @@
 
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작함
 
-20211021 : 
+해야할 일
 1. 지금 코드가 null인 상품은 보여주지 않고 있는데, 이 항목을 수정하고 싶으면 어떻게 해야하지? 라는 의문이 생겨서 코드 수정이 진행되어야 할 것 같음
 
-2. "수정" 버튼을 눌러서 입력 창이 나오게 만들어야 함 (여기서 다른 항목의 수정하기를 누르면 기존꺼는 사라지고 다른 항목에 수정하는 입력 창이 떠야함)
+2. "수정" 버튼을 눌러서 입력 창이 나오게 만들어야 함 (여기서 다른 항목의 수정하기를 누르면 기존꺼는 사라지고 다른 항목에 수정하는 입력 창이 떠야함) -> 하나만 뜨게 하는 방법 고민중
 
-3. 코드 수정을 하기 위한 input의 데이터를 입력하는데 Warning: A component is changing an uncontrolled input to be controlled. 이런 오류 발생하므로 수정해야됨
+3. option에 왜 value값 넣어야하는지? 알아보기
+
+20211021 : Post Method 기능 구현
+1. Post 메소드를 두 곳에 구현함
+메인 페이지에 나타날 유튜버를 추가할 CreateYoutuber.js
+유튜버의 항목 추가를 담당할 CreateList.js 
+
+2. 코드 수정을 하기 위한 input의 데이터를 입력하는데 Warning: A component is changing an uncontrolled input to be controlled. 이런 오류 발생하므로 수정해야됨
+->  value={ value || "수정할 코드 입력" }로 수정하였음
 
 20211020 : Post Method 구상
 1. Post 메소드를 구현할 Create.js 컴포넌트 생성

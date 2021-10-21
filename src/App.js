@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import EmptyPage from './component/EmptyPage';
 import Footer from './component/Footer';
 import CreateYoutuber from './component/CreateYoutuber';
+import CreateList from './component/CreateList';
 
 function App() {
   return (
@@ -21,8 +22,11 @@ function App() {
             <Route path="/youtuber/:youtuber">
               <CodeDetail />
             </Route>
-            <Route path="/create">
+            <Route path="/createYoutuber">
               <CreateYoutuber />
+            </Route>
+            <Route path="/createList/:youtuber">
+              <CreateList />
             </Route>
             <Route>
               <EmptyPage />

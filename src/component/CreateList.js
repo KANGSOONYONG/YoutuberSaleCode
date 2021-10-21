@@ -1,7 +1,11 @@
+import useFetch from "../hooks/useFetch";
+import { useParams } from "react-router";
 import { useRef } from "react";
 import { useHistory } from "react-router";
 export default function CreateYoutuber() {
 
+    const siteNames = useFetch(`http://localhost:3001/siteNames`);
+    const youParams = useParams().youtuber;
     // (항목 추가가 완료되면) Link to처럼 .push 해주면 그 페이지로 바로 이동하게 만들어주는 기능
     const history = useHistory();
 
@@ -11,34 +15,51 @@ export default function CreateYoutuber() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:3001/youtubers/` , {
+        fetch(`http://localhost:3001/items/` , {
             method : "POST",
             headers : {
                 'Content-Type' : 'application/json'
             },
             body : JSON.stringify({
-                youtuber : channelRef.current.value,
+                youtuber : youParams,
+                siteName : siteRef.current.value,
+                code : codeRef.current.value
             })
         })
         .then(res => {
             if(res.ok){
                 alert("생성 완료");
-                history.push(`youtuber/${channelRef.current.value}`)
+                history.push(`youtuber/${youParams}`)
             }
-        })   
+        })      
     }
 
     // 저장 버튼을 눌렀을 때 입력한 정보들을 얻어오기 useRef 이용해야함
-    const channelRef = useRef(null);
+    const siteRef = useRef(null);
+    const codeRef = useRef(null);
 
 
     return (
         <>
-            <h1>유튜버 추가</h1>
+            <h1>{youParams}의 항목 추가</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>채널명</label>
-                    <input type="text" placeholder="채널명" ref={channelRef}/>
+                    <span>{youParams}</span>
+                </div>
+                <div>
+                    <label>사이트</label>
+                    <select ref={siteRef}>
+                        {siteNames.map((siteName) => (
+                            <option key={siteName.SiteId} value={siteName.name}>
+                                {siteName.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label>할인 코드</label>
+                    <input type="text" placeholder="할인 코드" ref={codeRef}/>
                 </div>
                 <button>저장</button>
             </form>
