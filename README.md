@@ -13,6 +13,13 @@
 
 3. option에 왜 value값 넣어야하는지? 알아보기
 
+4. 항목추가를 했을 때 원하는 곳으로 history.push 되질 않음..
+
+20211027 : CSS 수정
+1. Grid 넣어서 /youtuber페이지, /CreateList페이지, /CreateYoutuber페이지 전체적인 부분 깔끔하게 정리하였음
+
+2. 수정 버튼을 누르면 나타나는 input : value 속성에 item.code 넣어서 수정하기 쉽게 만듦
+
 20211021 : Post Method 기능 구현
 1. Post 메소드를 두 곳에 구현함
 메인 페이지에 나타날 유튜버를 추가할 CreateYoutuber.js

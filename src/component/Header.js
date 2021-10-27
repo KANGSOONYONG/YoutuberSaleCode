@@ -44,10 +44,11 @@ import { Link } from "react-router-dom"
 
     list-style-type: none;
     font-size: 15px;
+    text-decoration: none;
+    color: black;
     `
 
 export default function Header() {
-
 
     return (
         <Header1>

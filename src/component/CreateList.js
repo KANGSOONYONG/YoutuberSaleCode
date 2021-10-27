@@ -2,6 +2,24 @@ import useFetch from "../hooks/useFetch";
 import { useParams } from "react-router";
 import { useRef } from "react";
 import { useHistory } from "react-router";
+import styled from "styled-components";
+
+const Title = styled.h1`
+text-align: center;
+`
+const BigDiv = styled.div`
+margin: 0 auto;
+width: 400px;
+`
+const SmallDiv = styled.div`
+margin: 10px 0;
+display: grid;
+grid-template-columns: 150px auto;
+`
+const Button = styled.button`
+position:relative;
+left:50%;
+`
 export default function CreateYoutuber() {
 
     const siteNames = useFetch(`http://localhost:3001/siteNames`);
@@ -40,14 +58,14 @@ export default function CreateYoutuber() {
 
 
     return (
-        <>
-            <h1>{youParams}의 항목 추가</h1>
+        <BigDiv>
+            <Title>{youParams}<br />코드 추가하기</Title>
             <form onSubmit={handleSubmit}>
-                <div>
+                <SmallDiv>
                     <label>채널명</label>
                     <span>{youParams}</span>
-                </div>
-                <div>
+                </SmallDiv>
+                <SmallDiv>
                     <label>사이트</label>
                     <select ref={siteRef}>
                         {siteNames.map((siteName) => (
@@ -56,13 +74,13 @@ export default function CreateYoutuber() {
                             </option>
                         ))}
                     </select>
-                </div>
-                <div>
+                </SmallDiv>
+                <SmallDiv>
                     <label>할인 코드</label>
                     <input type="text" placeholder="할인 코드" ref={codeRef}/>
-                </div>
-                <button>저장</button>
+                </SmallDiv>
+                <Button>저장</Button>
             </form>
-        </>
+        </BigDiv>
     )
 }

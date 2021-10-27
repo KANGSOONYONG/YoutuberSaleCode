@@ -59,7 +59,7 @@
     {
       "youtuber": "일반인클라쓰_RONIE",
       "siteName": "마이프로틴",
-      "code": "주문시 추천인 코드 [RONIE-RF] 입력해주세요! 로니 고유 할인 코드 [RONIE] 를 입력하시면 추가 36% 할인을 받으실 수 있습니다",
+      "code": "주문시 추천인 코드 [RONIE-RF]  추가 36% 할인 코드 [RONIE]",
       "id": 3
     },
     {
@@ -77,7 +77,7 @@
     {
       "youtuber": "지기TV",
       "siteName": "랭킹닭컴",
-      "code": "회원가입시 (코드 jgtv 입력)",
+      "code": "회원가입시 코드 jgtv 입력",
       "id": 6
     },
     {
@@ -95,49 +95,49 @@
     {
       "youtuber": "지피티",
       "siteName": "미트리",
-      "code": "지피티 회원가입시 추천인 코드 : 100371050 (56%할인)",
+      "code": "회원가입시 추천인 코드 100371050 (56%할인)",
       "id": 9
     },
     {
       "youtuber": "지피티",
       "siteName": "랭킹닭컴",
-      "code": null,      
+      "code": null,
       "id": 10
     },
     {
       "youtuber": "지피티",
       "siteName": "마이프로틴",
-      "code": null,      
+      "code": null,
       "id": 11
     },
     {
       "youtuber": "지피티",
       "siteName": "더프로틴웍스",
-      "code": "할인코드 : GPT",      
+      "code": "할인코드 : GPT",
       "id": 12
     },
     {
       "youtuber": "키다리형",
       "siteName": "미트리",
-      "code": "회원가입시 최대72%할인 추천인코드 : 100052273",      
+      "code": "회원가입시 최대 72% 할인 추천인코드 100052273",
       "id": 13
     },
     {
       "youtuber": "키다리형",
       "siteName": "랭킹닭컴",
-      "code": null,      
+      "code": null,
       "id": 14
     },
     {
       "youtuber": "키다리형",
       "siteName": "마이프로틴",
-      "code": "추가할인 코드: tallguy 회원가입시 추천인코드 8BRF-R1",      
+      "code": "회원가입시 추천인코드 8BRF-R1 추가 할인 코드 tallguy ",
       "id": 15
     },
     {
       "youtuber": "키다리형",
       "siteName": "더프로틴웍스",
-      "code": null,      
+      "code": null,
       "id": 16
     },
     {
@@ -149,7 +149,7 @@
     {
       "youtuber": "사실없는_애임",
       "siteName": "마이 프로틴",
-      "code": "11134232421",
+      "code": "ㅁㄴㅇㅁㄴㄻㄴㄹ",
       "id": 18
     }
   ]

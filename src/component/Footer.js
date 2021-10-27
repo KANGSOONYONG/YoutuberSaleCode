@@ -12,7 +12,6 @@ position: fixed;
 left: 0;
 bottom: 0;
 border-top: 1px solid black;
-
 background-color: #E3DFDF;
 `
 const ItemLink = styled.a`

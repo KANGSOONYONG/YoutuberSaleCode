@@ -1,5 +1,23 @@
 import { useRef } from "react";
 import { useHistory } from "react-router";
+import styled from "styled-components";
+
+const Title = styled.h1`
+text-align: center;
+`
+const BigDiv = styled.div`
+margin: 0 auto;
+width: 280px;
+`
+const SmallDiv = styled.div`
+margin: 40px 0 30px 0;
+display: grid;
+grid-template-columns: 100px auto;
+`
+const Button = styled.button`
+position:relative;
+left:50%;
+`
 export default function CreateYoutuber() {
 
     // (항목 추가가 완료되면) Link to처럼 .push 해주면 그 페이지로 바로 이동하게 만들어주는 기능
@@ -27,21 +45,20 @@ export default function CreateYoutuber() {
             }
         })   
     }
-
     // 저장 버튼을 눌렀을 때 입력한 정보들을 얻어오기 useRef 이용해야함
     const channelRef = useRef(null);
 
 
     return (
-        <>
-            <h1>유튜버 추가</h1>
+        <BigDiv>
+            <Title>유튜버 추가하기</Title>
             <form onSubmit={handleSubmit}>
-                <div>
+                <SmallDiv>
                     <label>채널명</label>
                     <input type="text" placeholder="채널명" ref={channelRef}/>
-                </div>
-                <button>저장</button>
+                </SmallDiv>
+                <Button>저장</Button>
             </form>
-        </>
+        </BigDiv>
     )
 }

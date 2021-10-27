@@ -6,16 +6,15 @@ import { useState } from "react";
 
 const Header1 = styled.h1`
 margin-left: 10px;
-display: inline-block;
+display: grid;
+grid-template-columns: 1fr auto;
 `
 const Contents = styled.div`
 display: inline-block;
-padding : 0 0 10px 0;
-margin: 0px 0px 30px 10px;
+display: grid;
+grid-template-columns: auto 60px 60px;
 `
 const Button = styled.button`
-// float: left;
-
 padding: 5px 5px;
 margin: 10px;
 
@@ -34,8 +33,19 @@ cursor: pointer;
 
 align-items: center;
 justify-content: center;
-
-// width: 200px;
+`
+const BigGrid = styled.div`
+padding: 15px;
+margin: 5px;
+background-color: papayawhip;
+border: 1px solid black;
+`
+const CodeTitle = styled.b`
+font-size: 20px;
+`
+const Input = styled.input`
+height: 18px;
+width: 500px;
 `
 export default function CodeDetail() {
     const [value, setValue] = useState();
@@ -52,25 +62,28 @@ export default function CodeDetail() {
     const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
 
     const [isOpen, setIsOpen] = useState(false);
-    console.log(isOpen)
+
     // 수정 기능 (PUT)
     function put(index) {
-        fetch(`http://localhost:3001/items/${item[index].id}` , {
-            method : "PUT",
-            headers : {
-                'Content-Type' : 'application/json'
-            },
-            body : JSON.stringify({
-                ...item[index],
-                code : value
+        if(window.confirm("수정 하시겠습니까?")) {
+            fetch(`http://localhost:3001/items/${item[index].id}` , {
+                method : "PUT",
+                headers : {
+                    'Content-Type' : 'application/json'
+                },
+                body : JSON.stringify({
+                    ...item[index],
+                    code : value
+                })
             })
-        })
-        .then(res => {
-            if(res.ok){
-                console.log("수정 완료");
-                window.location.reload()
-            }
-        })
+            .then(res => {
+                if(res.ok){
+                    console.log("수정 완료");
+                    window.location.reload()
+                }
+            })
+        }
+
     }
 
     // 삭제 기능 (DELETE)
@@ -101,18 +114,21 @@ export default function CodeDetail() {
             {item.map((item, index) => (
                 <div key={item.id}>
                     {item.code !== null && 
-                    <Contents> {item.siteName} 할인 코드 : {item.code}
+                    <BigGrid>
+                        <CodeTitle>{item.siteName} 할인 코드</CodeTitle> 
+                        <Contents> {item.code} 
 
-                    <button onClick={showInput}> {isOpen !== true ? "수정" : "숨기기" } </button>
-                    <button onClick={(e) => del(index, e)}>삭제</button>
+                        <button onClick={showInput}> {isOpen !== true ? "수정" : "숨기기" } </button>
+                        <button onClick={(e) => del(index, e)}>삭제</button>
 
-                    {isOpen === true && <div>
-                        <form onSubmit={handleSubmit}>
-                            <input type="text" value={value || ""} onChange={valueChange}/>
-                            <button onClick={(e) => put(index, e)}>코드 수정</button>
-                        </form>
-                    </div>}
-                    </Contents>}
+                        {isOpen === true && <div>
+                            <form onSubmit={handleSubmit}>
+                                <Input type="text" value={value || item.code} onChange={valueChange}/>
+                                <button onClick={(e) => put(index, e)}>코드 수정</button>
+                            </form>
+                        </div>}
+                        </Contents>
+                    </BigGrid>}
                 </div>
             ))}
         </>
