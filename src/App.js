@@ -8,6 +8,7 @@ import EmptyPage from './component/EmptyPage';
 import Footer from './component/Footer';
 import CreateYoutuber from './component/CreateYoutuber';
 import CreateList from './component/CreateList';
+import LoginPage from './component/LoginPage';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/createList/:youtuber">
               <CreateList />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
             </Route>
             <Route>
               <EmptyPage />

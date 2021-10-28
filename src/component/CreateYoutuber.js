@@ -18,6 +18,10 @@ const Button = styled.button`
 position:relative;
 left:50%;
 `
+const BackButton = styled(Button)`
+left: 47%;
+margin-top: 5px;
+`
 export default function CreateYoutuber() {
 
     // (항목 추가가 완료되면) Link to처럼 .push 해주면 그 페이지로 바로 이동하게 만들어주는 기능
@@ -48,7 +52,9 @@ export default function CreateYoutuber() {
     // 저장 버튼을 눌렀을 때 입력한 정보들을 얻어오기 useRef 이용해야함
     const channelRef = useRef(null);
 
-
+    const goBack = () => {
+        history.goBack();        
+    }
     return (
         <BigDiv>
             <Title>유튜버 추가하기</Title>
@@ -59,6 +65,7 @@ export default function CreateYoutuber() {
                 </SmallDiv>
                 <Button>저장</Button>
             </form>
+            <BackButton onClick={goBack}>뒤로가기</BackButton>
         </BigDiv>
     )
 }
