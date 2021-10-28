@@ -18,7 +18,12 @@ grid-template-columns: 150px auto;
 `
 const Button = styled.button`
 position:relative;
-left:50%;
+left: 50%;
+margin-top: 5px;
+`
+const BackButton = styled(Button)`
+left: 47%;
+margin-top: 5px;
 `
 export default function CreateYoutuber() {
 
@@ -47,7 +52,7 @@ export default function CreateYoutuber() {
         .then(res => {
             if(res.ok){
                 alert("생성 완료");
-                history.push(`youtuber/${youParams}`)
+                history.goBack();
             }
         })      
     }
@@ -56,6 +61,9 @@ export default function CreateYoutuber() {
     const siteRef = useRef(null);
     const codeRef = useRef(null);
 
+    const goBack = () => {
+        history.goBack();        
+    }
 
     return (
         <BigDiv>
@@ -81,6 +89,7 @@ export default function CreateYoutuber() {
                 </SmallDiv>
                 <Button>저장</Button>
             </form>
+            <BackButton onClick={goBack}>뒤로가기</BackButton>
         </BigDiv>
     )
 }

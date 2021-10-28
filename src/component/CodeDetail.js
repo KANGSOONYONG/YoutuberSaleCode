@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom"
 import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
-import { useState } from "react";
+import Form from "./Form";
 
 const Header1 = styled.h1`
 margin-left: 10px;
@@ -43,67 +43,12 @@ border: 1px solid black;
 const CodeTitle = styled.b`
 font-size: 20px;
 `
-const Input = styled.input`
-height: 18px;
-width: 500px;
-`
-export default function CodeDetail() {
-    const [value, setValue] = useState();
 
-    const valueChange = (e) => {
-        setValue(e.target.value);
-    }
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
-    
+export default function CodeDetail() {
+
     const youParams = useParams().youtuber;
     const item = useFetch(`http://localhost:3001/items?youtuber=${youParams}`);
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    // 수정 기능 (PUT)
-    function put(index) {
-        if(window.confirm("수정 하시겠습니까?")) {
-            fetch(`http://localhost:3001/items/${item[index].id}` , {
-                method : "PUT",
-                headers : {
-                    'Content-Type' : 'application/json'
-                },
-                body : JSON.stringify({
-                    ...item[index],
-                    code : value
-                })
-            })
-            .then(res => {
-                if(res.ok){
-                    console.log("수정 완료");
-                    window.location.reload()
-                }
-            })
-        }
-
-    }
-
-    // 삭제 기능 (DELETE)
-    function del(index) {
-        if(window.confirm("삭제 하시겠습니까?")) {
-            fetch(`http://localhost:3001/items/${item[index].id}`, {
-                method : 'DELETE'
-            }).then(res =>{
-                if(res.ok) {
-                    console.log("삭제 완료");
-                    window.location.reload()
-                }
-            })
-        }
-    }
-
-    // 숨겨놓은 input 창 보이게 하기
-    function showInput() {
-        setIsOpen(!isOpen);
-    }
     return (
         <>
             <Header1>
@@ -111,22 +56,15 @@ export default function CodeDetail() {
                 <Button as={Link} to={`/createList/${youParams}`}>항목 추가</Button>
             </Header1>
 
-            {item.map((item, index) => (
+            {item.map((item) => (
                 <div key={item.id}>
                     {item.code !== null && 
                     <BigGrid>
                         <CodeTitle>{item.siteName} 할인 코드</CodeTitle> 
                         <Contents> {item.code} 
 
-                        <button onClick={showInput}> {isOpen !== true ? "수정" : "숨기기" } </button>
-                        <button onClick={(e) => del(index, e)}>삭제</button>
+                        <Form item={item} />
 
-                        {isOpen === true && <div>
-                            <form onSubmit={handleSubmit}>
-                                <Input type="text" value={value || item.code} onChange={valueChange}/>
-                                <button onClick={(e) => put(index, e)}>코드 수정</button>
-                            </form>
-                        </div>}
                         </Contents>
                     </BigGrid>}
                 </div>
