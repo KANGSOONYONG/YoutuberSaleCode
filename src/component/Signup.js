@@ -50,8 +50,8 @@ export default function LoginPage() {
         })
         .then((res) => {
             if(res.ok){
-                alert("로그인 성공");
-                history.push("/");
+                alert("회원가입이 완료됐습니다.");
+                window.location.reload();
             }
         })
     }
@@ -80,15 +80,14 @@ export default function LoginPage() {
 
     return (
         <BigDiv>
-            <Title>로그인</Title>
+            <Title>회원가입</Title>
             <form onSubmit={handleSubmitSignUp}>
                 <SmallDiv>
-                    <Input type="text" placeholder="아이디" ref={idRef} />
-                    <Input type="text" placeholder="패스워드" ref={passwordRef} />
+                    <Input type="text" placeholder="사용할 아이디를 입력하세요" ref={idRef} />
+                    <Input type="text" placeholder="사용할 비밀번호를 입력하세요" ref={passwordRef} />
                 </SmallDiv>
-                <Button>로그인하기</Button>
+                <Button>회원가입하기</Button>
             </form>
-            <Button>회원가입</Button>
             <BackButton onClick={goBack}>뒤로가기</BackButton>
         </BigDiv>
     )

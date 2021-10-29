@@ -9,6 +9,7 @@ import Footer from './component/Footer';
 import CreateYoutuber from './component/CreateYoutuber';
 import CreateList from './component/CreateList';
 import LoginPage from './component/LoginPage';
+import Signup from './component/Signup';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/login">
               <LoginPage />
+            </Route>
+            <Route path="/signup">
+              <Signup />
             </Route>
             <Route>
               <EmptyPage />

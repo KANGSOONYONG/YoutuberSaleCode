@@ -33,7 +33,7 @@ export default function Form({ item }) {
             .then(res => {
                 if(res.ok){
                     console.log("수정 완료");
-                    window.location.reload()
+                    window.location.reload();
                 }
             })
         }
@@ -48,7 +48,7 @@ export default function Form({ item }) {
             }).then(res =>{
                 if(res.ok) {
                     console.log("삭제 완료");
-                    window.location.reload()
+                    window.location.reload();
                 }
             })
         }

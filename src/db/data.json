@@ -43,6 +43,18 @@
       "Link": "https://kr.theproteinworks.com/"
     }
   ],
+  "users": [
+    {
+      "name": "user1",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "임경문",
+      "password": "1234",
+      "id": 2
+    }
+  ],
   "items": [
     {
       "youtuber": "일반인클라쓰_RONIE",
