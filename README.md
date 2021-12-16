@@ -5,15 +5,15 @@
 사용자가 페이지를 이동할 때마다 로딩이 없는 느낌을 주기 위해, 리액트를 이용해서 제작하였고, json server를 이용하여 REST API를 간단히 구현하였습니다.
 
 ### 개발 기간 & 블로그
-개발기간 : 약 한 달
-블로그 : [https://blog.naver.com/pliuhb/222527419988](https://blog.naver.com/pliuhb/222527419988)
+* 개발기간 : 약 한 달
+* 블로그 : [https://blog.naver.com/pliuhb/222527419988](https://blog.naver.com/pliuhb/222527419988)
 ### 프로젝트 제작 목적
-리액트를 이용한 프로젝트 제작 경험 쌓기
-REST API를 간단히 구현해보며 관련 코드, 동작 등을 공부
+* 리액트를 이용한 프로젝트 제작 경험 쌓기
+* REST API를 간단히 구현해보며 관련 코드, 동작 등을 공부
 
 ### 적용 기술
-React
-React_json_server
+* React
+* React_json_server
 
 ---
 ### 수정 사항
